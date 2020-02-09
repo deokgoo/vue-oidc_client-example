@@ -18,4 +18,9 @@ const router = new VueRouter({
   routes,
 });
 
+// router.beforeEach((to, from, next)=> {
+//   // oidcInfo => vuex
+//   next();
+// });
+
 export default router;

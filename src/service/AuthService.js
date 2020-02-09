@@ -1,24 +1,22 @@
-import uManager from "./oidcClientService";
+import uManager from './oidcClientService';
 
 export default class AuthService {
   signIn = {
     mainWindow() {
-      uManager.settings.redirect_uri = "/";
-      return uManager.signinRedirect();
+      return uManager.signinRedirect({ redirect_uri: window.location.href });
     },
 
     diffWindow() {
-      uManager.settings.redirect_uri = "/callback-signin";
-      return uManager.signinRedirect();
+      return uManager.signinRedirect({ redirect_uri: '/callback-signin' });
     },
 
     popup() {
-      uManager.settings.popup_redirect_uri = "/popup-signin";
+      uManager.settings.popup_redirect_uri = '/popup-signin';
       return uManager.signinPopup();
     },
     // iframe login, renewToken
     silent() {
-      uManager.settings.redirect_uri = "/";
+      uManager.settings.redirect_uri = '/';
       return uManager.signinSilent();
     },
   };
@@ -59,12 +57,12 @@ export default class AuthService {
 
   signOutCallBack = {
     callback() {
-      return uManager.signoutCallback()
+      return uManager.signoutCallback();
     },
 
     redirect() {
       return uManager.signoutRedirectCallback();
-    }
+    },
   };
 
   resource = {

@@ -18,9 +18,6 @@ export default {
     Base,
     Code,
     Implicit,
-  },
-  created() {
-    console.log(process.env.VUE_APP_SERVER);
-  },
+  }
 };
 </script>
