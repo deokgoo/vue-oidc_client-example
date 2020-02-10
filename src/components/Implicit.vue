@@ -3,6 +3,9 @@
     <Button @click="signInMainView">signInMainView</Button>
     <Button @click="signInCallBack">callback</Button>
     <Button @click="getUserInfo">getUerInfo</Button>
+    <h3>UserInfo</h3>
+    <tree-view v-if="userInfo" :data="userInfo"
+               style="height:500px;"></tree-view>
   </div>
 </template>
 
@@ -14,6 +17,7 @@ export default {
   data() {
     return {
       authService: {},
+      userInfo: '',
     };
   },
   created() {
@@ -27,8 +31,8 @@ export default {
       this.authService.signInCallBack.callBack();
     },
     async getUserInfo() {
-      const userInfo = await this.authService.resource.user();
-      console.log(userInfo);
+      const res = await this.authService.resource.user();
+      this.userInfo = res;
     },
   },
 };

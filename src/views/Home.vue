@@ -18,6 +18,6 @@ export default {
     Base,
     Code,
     Implicit,
-  }
+  },
 };
 </script>
