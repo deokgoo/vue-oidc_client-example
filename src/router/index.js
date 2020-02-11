@@ -1,14 +1,20 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
+import SignInCallBack from '../views/signin-callback';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/:flow',
+    path: '/auth/:flow',
     name: 'Home',
     component: Home,
+  },
+  {
+    path: '/signin-callback',
+    name: 'SignInCallBack',
+    component: SignInCallBack,
   },
 ];
 

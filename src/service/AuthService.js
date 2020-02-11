@@ -3,19 +3,18 @@ import uManager from './oidcClientService';
 export default class AuthService {
   signIn = {
     mainWindow() {
-      return uManager.signinRedirect({ redirect_uri: window.location.href });
+      return uManager.signinRedirect();
     },
 
     diffWindow() {
-      return uManager.signinRedirect({ redirect_uri: '/callback-signin' });
+      return uManager.signinRedirect({ redirect_uri: '/callback-signIn' });
     },
 
     popup() {
-      return uManager.signinPopup({ redirect_uri: window.location.href });
+      return uManager.signinPopup();
     },
     // iframe login, renewToken
     silent() {
-      uManager.settings.redirect_uri = '/';
       return uManager.signinSilent();
     },
   };

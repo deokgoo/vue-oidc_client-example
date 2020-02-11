@@ -5,4 +5,5 @@ module.exports = {
     https: false,
     hotOnly: false,
   },
+  runtimeCompiler: true
 };

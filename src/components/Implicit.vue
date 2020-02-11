@@ -2,6 +2,7 @@
   <div class="implicit">
     <Button @click="signInMainView">signInMainView</Button>
     <Button @click="signInPopView">signInPopView</Button>
+    <Button @click="signInSilent">silent</Button>
     <Button @click="signInCallBack">callback</Button>
     <Button @click="getUserInfo">getUerInfo</Button>
     <Button @click="signOutPop">signOutPop</Button>
@@ -32,7 +33,10 @@ export default {
 
     async signInPopView() {
       await this.authService.signIn.popup();
-      await this.authService.signInCallBack.popup();
+    },
+
+    signInSilent() {
+      this.authService.signIn.silent();
     },
 
     signInCallBack() {
