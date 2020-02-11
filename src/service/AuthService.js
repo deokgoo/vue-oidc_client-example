@@ -11,8 +11,7 @@ export default class AuthService {
     },
 
     popup() {
-      uManager.settings.popup_redirect_uri = '/popup-signin';
-      return uManager.signinPopup();
+      return uManager.signinPopup({ redirect_uri: window.location.href });
     },
     // iframe login, renewToken
     silent() {
@@ -50,8 +49,8 @@ export default class AuthService {
       return uManager.signoutRedirect();
     },
 
-    popup() {
-      return uManager.signoutPopup();
+    popup(options) {
+      return uManager.signoutPopup(options);
     },
   };
 
