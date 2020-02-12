@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import AuthService from '../service/AuthService';
 
 export default {
@@ -25,8 +26,10 @@ export default {
   },
   created() {
     this.authService = new AuthService();
+    this.updateRedirectUrl('/implicit');
   },
   methods: {
+    ...mapActions(['updateRedirectUrl']),
     signInMainView() {
       this.authService.signIn.mainWindow();
     },
