@@ -1,5 +1,5 @@
 # vue-oidc_client-example
-
+for Vue example (base RFC-OAuth2)
 ## Project setup
 ```
 yarn install
